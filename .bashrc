@@ -17,6 +17,10 @@ alias dnr="dotnet restore"
 alias dnb="dotnet build"
 alias dnt="dotnet test"
 
+#code-coverage
+alias dnts="dotnet test src/Test/ //p:CollectCoverage=true //p:CoverletOutputFormat=OpenCover"
+alias cv="reportgenerator "-reports:src/Test/coverage.opencover.xml" "-targetdir:src/Test/reports" "-sourcedirs:src/" -reporttypes:HTML;Cobertura"
+
 #docker
 alias dkps="docker ps"
 alias dkb="docker build . -t"
