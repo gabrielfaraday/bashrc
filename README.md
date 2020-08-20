@@ -32,6 +32,6 @@ Look for lines that change the value of variable `PS1` and comment those lines.
 
 > WSL
 
-Copy the content of the `lnx.bashrc` to the top of your .bashrc file under your user folder in the WSL workspace.
+Copy the content of the `wsl.bashrc` to the top of your .bashrc file under your user folder in the WSL workspace.
 
 Look for lines that change the value of variable `PS1` and comment those lines.
