@@ -15,9 +15,10 @@ alias gs="git status"
 alias ga="git add -A"
 alias gac="git add -A && git commit -m"
 alias gf="git fetch origin"
-alias gcl="git clone"
+alias gpo="git push origin"
 alias email=" git config --global user.email"
 alias name=" git config --global user.name"
+alias pai="git shortlog -s -n --all --no-merges"
 
 #dotnet
 alias dnr="dotnet restore"
@@ -35,10 +36,29 @@ alias dki="docker images"
 
 #kubernetes
 alias k="kubectl"
+alias kg="kubectl get"
 alias kgn="kubectl get namespace"
-alias kgp="kubectl get pods"
+alias kgp="kubectl get pods -o wide -n"
+alias kd="kubectl describe"
+alias kdp="kubectl describe pod"
+alias kdel="kubectl delete"
+alias kdelp="kubectl delete pod"
+alias kdeln="kubectl delete namespace"
 
 #functions
+function gcl {
+    git clone $1
+
+	path=$1
+	basepath="https://gitbasepath/"
+	end=".git"
+
+	myfolder=${path#${basepath}}
+	myfolder=${myfolder%${end}}
+	
+	cd ${myfolder}
+}
+
 function repo() {
     path="$(pwd)/"
 	basepath="/home/<edit>/Documents/git/"
