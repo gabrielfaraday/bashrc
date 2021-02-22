@@ -23,8 +23,7 @@ alias pai="git shortlog -s -n --all --no-merges"
 #dotnet
 alias dnr="dotnet restore"
 alias dnb="dotnet build"
-alias dnt="dotnet test"
-alias dnts="dotnet test src/Test/ /p:CollectCoverage=true /p:CoverletOutputFormat=OpenCover"
+alias dnt="dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=OpenCover"
 alias config_cv="dotnet tool install -g dotnet-reportgenerator-globaltool && dotnet tool install dotnet-reportgenerator-globaltool --tool-path tools"
 alias cv="reportgenerator "-reports:src/Test/coverage.opencover.xml" "-targetdir:src/Test/reports" "-sourcedirs:src/" -reporttypes:HTML;Cobertura"
 
@@ -33,6 +32,7 @@ alias dkps="docker ps"
 alias dkb="docker build . -t"
 alias dkr="docker run"
 alias dki="docker images"
+alias dclean="docker stop $(docker ps -a -q) & docker rm $(docker ps -a -q) & docker rmi $(docker images -a -q)"
 
 #kubernetes
 alias k="kubectl"
